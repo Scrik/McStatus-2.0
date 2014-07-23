@@ -1,0 +1,70 @@
+body    { 
+    background: #ebebeb url('../img/bg-a.jpg');
+    padding-top: 60px;
+}
+.content { 
+    background: #ffffff; 
+    padding: 20px; 
+    border-radius: 5px; 
+    border: 1px #cecece solid; 
+    -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, .1); 
+    -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, .1); 
+    box-shadow: 0 1px 10px rgba(0, 0, 0, .1); 
+    margin-bottom: 20px;
+}
+
+.footer-content {
+    background: #ffffff; 
+    padding-top: 5px; 
+    border-radius: 5px; 
+    border: 1px #cecece solid; 
+    -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, .1); 
+    -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, .1); 
+    box-shadow: 0 1px 10px rgba(0, 0, 0, .1); 
+    margin-bottom: 5px; 
+}
+
+.table {
+    background: #ffffff;
+    margin-bottom: 0;
+    border-collapse: collapse;
+    border-radius: 3px;
+}
+
+.table th, .table td { 
+    text-align: left;
+}
+
+.progress span{
+    display: block;
+    position: absolute;
+    width: 80%;
+    color: #242328;
+}
+
+.left {
+    float: left;
+}
+
+.centerize {
+    position: fixed;
+    left: 50%;
+    margin-left: -100px;
+}
+
+.right {
+    float: right;
+}
+
+.btn-x {
+    margin-bottom: 5px;
+}
+
+.modal.modal-wide .modal-dialog {
+    width: 750px;
+}
+
+.dl-horizontal dt {
+    text-align: left;
+    width: auto;
+}
