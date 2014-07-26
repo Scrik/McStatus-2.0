@@ -200,7 +200,7 @@ require 'res/McStatus.class.php'
 
                         <select class="form-control">
                             <?php
-                            //getHistoryOptions($db);
+                                McHistory::getContent(HistoryCSS::OPTIONS);
                             ?>
                         </select>
 

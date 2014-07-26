@@ -1,5 +1,5 @@
 <?php
-require 'inc/QuickDatabase/DB.class.php';
+require_once 'McStatus.class.php';
 /**
     Die Tabelle 'services' 
     service | online | offline | currentStatus | currentDowntime | location

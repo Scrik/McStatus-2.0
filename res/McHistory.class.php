@@ -1,10 +1,11 @@
 <?php
-require 'McStatus.class.php';
+require_once 'McStatus.class.php';
+require_once 'McService.class.php';
 
 abstract class HistoryCSS {
     
-    const OPTIONS;
-    const CONTENT;
+    const OPTIONS = 'OPTIONS';
+    const CONTENT = 'CONTENT';
     
 }
 
@@ -18,7 +19,7 @@ class McHistory {
 
             $mc = new McService($service);
             
-            $info = [
+            $info = array(
                 $mc->getService() => [
                     
                     'info' => [
@@ -34,7 +35,7 @@ class McHistory {
                     ]
                     
                 ]
-            ];
+            );
             
             array_push($history, $info);
         }
@@ -58,17 +59,25 @@ class McHistory {
         
     }
     
-    public static function getOptions() {
-        $query = DB::getInstance()->select('history');
+    public static function getContent($value) {
+        
+        switch($value) {
+            
+            case HistoryCSS::CONTENT: 
+                
+                break;
+            
+            case HistoryCSS::OPTIONS:
+                $query = DB::getInstance()->select('history');
 
-        foreach($query->getResult() as $history) {
-
-            echo "<option href=\"#tab-{$history->id}\" data-toggle=\"tab\">{$history->date}</option>";
+                foreach ($query->getResult() as $history) {
+                    echo "<option href=\"#tab-{$history->id}\" data-toggle=\"tab\">{$history->date}</option>";
+                }
+                break;
             
         }
-
+        
     }
-    
 }
 
 ?>

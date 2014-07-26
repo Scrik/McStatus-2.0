@@ -1,5 +1,5 @@
 <?php
-require_once 'McService.class.php';
+require_once 'inc/QuickDatabase/DB.class.php';
 /**
     Die Tabelle 'services' 
     service | online | offline | currentStatus | currentDowntime | location
@@ -62,6 +62,7 @@ class McStatus {
 
             $count = DB::getInstance()->count('services', array('service', '=', $service));
             $status     = self::getServerStatus($service);
+            $originalStatus = $status;
             $status     = ((is_null($status) || empty($status) || $status == 'yellow') ? 'green' : $status);
             $isOnline   = ($status == 'green');
             $location   = self::getLocation($service);
@@ -93,7 +94,7 @@ class McStatus {
                 $service
             ));
             
-            if(!($isOnline)) {
+            if(!($isOnline) || ($originalStatus == 'yellow')) {
                 DB::getInstance()->insert('log', array(
                     'service'   => $service,
                     'date'      => date('d.m.Y G:i (T)'),
